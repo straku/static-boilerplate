@@ -1,0 +1,21 @@
+{
+  "name": "static-boilerplate",
+  "version": "0.1.0",
+  "description": "Simple boilerplate for static webpages.",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/straku/static-boilerplate.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "static webpage"
+  ],
+  "author": "Łukasz Strączyński <l.straczynski@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/straku/static-boilerplate/issues"
+  },
+  "homepage": "https://github.com/straku/static-boilerplate#readme"
+}
