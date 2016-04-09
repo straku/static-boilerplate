@@ -4,17 +4,18 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: [
-    './assets/index.js'
-  ],
+  entry: {
+    index: './assets/index.js',
+    contact: './assets/contact.js'
+  },
 
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'js/bundle.js'
+    filename: 'js/[name].js'
   },
 
   plugins: [
-    new ExtractTextPlugin('css/styles.css', {allChunks: true}),
+    new ExtractTextPlugin('css/[name].css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -27,7 +28,14 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'assets/index.html'
+      template: 'assets/index.html',
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'assets/contact.html',
+      filename: 'contact.html',
+      chunks: ['contact']
     })
   ],
 

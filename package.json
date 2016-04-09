@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Simple boilerplate for static webpages.",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "clean": "rimraf build",
+    "start": "npm run clean && webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
