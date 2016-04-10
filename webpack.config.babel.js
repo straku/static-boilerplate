@@ -60,10 +60,9 @@ export default {
       },
       {
         test: /\.(svg|jpe?g|png)$/,
-        loader: 'file',
-        query: {
-          name: 'img/[name].[ext]'
-        }
+        loaders: [
+          'file?name=img/[name].[ext]'
+        ].concat(isProd ? ['image-webpack'] : [])
       }
     ]
   }
