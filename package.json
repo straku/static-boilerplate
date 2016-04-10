@@ -4,7 +4,7 @@
   "description": "Simple boilerplate for static webpages.",
   "scripts": {
     "clean": "rimraf build",
-    "start": "npm run clean && webpack-dev-server --no-info --hot --inline --content-base build/ --port 3000",
+    "start": "npm run clean && webpack-dev-server --no-info --inline --content-base build/ --port 3000",
     "build-dev": "npm run clean && cross-env NODE_ENV=development webpack",
     "build": "npm run clean && cross-env NODE_ENV=production webpack"
   },
