@@ -84,13 +84,13 @@
 /* 12 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	var letsTry = function letsTry(text) {
-	  console.log("Let's try some ECMAScript 6! " + text);
+	  console.log('Let\'s try some ECMAScript 6! ' + text);
 	};
 	
-	letsTry("It's really cool!");
+	letsTry('It\'s really cool!');
 
 /***/ }
 /******/ ]);
