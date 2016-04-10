@@ -59,7 +59,7 @@ export default {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader?sourceMap!postcss-loader')
       },
       {
-        test: /\.(svg|jpg|png)$/,
+        test: /\.(svg|jpe?g|png)$/,
         loader: 'file',
         query: {
           name: 'img/[name].[ext]'
