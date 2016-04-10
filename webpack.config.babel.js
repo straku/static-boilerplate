@@ -32,12 +32,12 @@ export default {
   plugins: [
     new ExtractTextPlugin('css/[name].css'),
     new HtmlPlugin({
-      template: 'assets/index.html',
+      template: 'html!assets/index.html',
       filename: 'index.html',
       chunks: ['index']
     }),
     new HtmlPlugin({
-      template: 'assets/contact.html',
+      template: 'html!assets/contact.html',
       filename: 'contact.html',
       chunks: ['contact']
     })
@@ -57,6 +57,13 @@ export default {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader?sourceMap!postcss-loader')
+      },
+      {
+        test: /(\.svg$|\.jpg$|\.png$)/,
+        loader: 'file',
+        query: {
+          name: 'img/[name].[ext]'
+        }
       }
     ]
   }
