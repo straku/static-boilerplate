@@ -17,7 +17,7 @@ Boilerplate is powered by [Webpack][webpack] and [Babel][babel] for JavaScript t
 - Simple resource loading (no need to specify `<script></script>` for script loading or `<link></link>` for style loading directly in `HTML` files, instead relying on small JS "specification" files with ECMAScript 6 `import` syntax)
 - Simple image loading (relative paths as `img` `src` attributes or `url()` attribute in stylesheet, changed to correct path during build step)
 - Image optimization in production build
-- ESLint with slightly modified [airbnb][airbnb] style guide (I don't like semicolons :wink: )
+- ESLint with slightly modified [airbnb][airbnb] style guide (I don't like semicolons and trailing commas :wink: )
 
 ## Getting started
 
