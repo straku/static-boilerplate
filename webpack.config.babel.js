@@ -7,20 +7,6 @@ import HtmlPlugin from 'html-webpack-plugin'
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
-const defaultPlugins = [
-  new ExtractTextPlugin('css/[name].css'),
-  new HtmlPlugin({
-    template: 'assets/index.html',
-    filename: 'index.html',
-    chunks: ['index']
-  }),
-  new HtmlPlugin({
-    template: 'assets/contact.html',
-    filename: 'contact.html',
-    chunks: ['contact']
-  })
-]
-
 const productionPlugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.optimize.UglifyJsPlugin({
@@ -43,7 +29,19 @@ export default {
     filename: 'js/[name].js'
   },
 
-  plugins: isProd ? [...defaultPlugins, ...productionPlugins] : defaultPlugins,
+  plugins: [
+    new ExtractTextPlugin('css/[name].css'),
+    new HtmlPlugin({
+      template: 'assets/index.html',
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlPlugin({
+      template: 'assets/contact.html',
+      filename: 'contact.html',
+      chunks: ['contact']
+    })
+  ].concat(isProd ? productionPlugins : []),
 
   module: {
     loaders: [
