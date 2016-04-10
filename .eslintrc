@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb/base",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "space-before-function-paren": [2, "always"],
+    "max-len": [2, 120, 2],
+    "no-trailing-spaces": [2, { "skipBlankLines": true }]
+  }
+}
