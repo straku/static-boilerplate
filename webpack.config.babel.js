@@ -10,9 +10,7 @@ const isDev = !isProd
 const productionPlugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false
-    }
+    compressor: { warnings: false }
   })
 ]
 
@@ -68,6 +66,6 @@ export default {
   },
 
   postcss: [
-    autoprefixer({browsers: ['last 2 versions']})
+    autoprefixer({ browsers: ['last 2 versions'] })
   ]
 }
