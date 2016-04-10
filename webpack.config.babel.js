@@ -65,8 +65,7 @@ export default {
         ].concat(isProd ? ['image-webpack'] : [])
       }
     ]
-  }
-  ,
+  },
 
   postcss: [
     autoprefixer({browsers: ['last 2 versions']})
