@@ -1,8 +1,7 @@
-import path from 'path'
-import webpack from 'webpack'
-import autoprefixer from 'autoprefixer'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import HtmlPlugin from 'html-webpack-plugin'
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
@@ -14,31 +13,26 @@ const productionPlugins = [
   })
 ]
 
-export default {
+module.exports = {
   devtool: isDev ? 'source-map' : null,
-
-  entry: {
-    index: './assets/index.js',
-    contact: './assets/contact.js'
-  },
 
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'js/[name].js'
   },
 
+  devServer: {
+    contentBase: 'build/',
+    stats: {
+      colors: true,
+      chunks: false,
+      chunkModules: false,
+      children: false
+    }
+  },
+
   plugins: [
-    new ExtractTextPlugin('css/[name].css'),
-    new HtmlPlugin({
-      template: 'html!assets/index.html',
-      filename: 'index.html',
-      chunks: ['index']
-    }),
-    new HtmlPlugin({
-      template: 'html!assets/contact.html',
-      filename: 'contact.html',
-      chunks: ['contact']
-    })
+    new ExtractTextPlugin('css/[name].css')
   ].concat(isProd ? productionPlugins : []),
 
   module: {
