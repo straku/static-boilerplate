@@ -24,7 +24,8 @@ export default {
 
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
+    publicPath: '/'
   },
 
   plugins: [
